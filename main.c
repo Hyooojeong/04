@@ -4,19 +4,21 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int a;
+	unsigned int x;
+	int b;
 	
-	printf("input the year : ");
-	scanf("%i", &a);
+	printf("input a number : ");
+	scanf("%ui", &x);
 	
-	int result = 0;
-	
-	if ((a % 4 == 0 && a % 100 != 0) || (a % 400 == 0) ) {
-		result = 1;
+	for (b=0; x != 0; x >>= 1)
+	{
+		if (x & 1)
+		{
+			b++;
+		}
 	}
 	
-	printf("is the year %i the leap year? : %i\n", a, result);
-	
+	printf("The result is : %i\n", b);
 	
 	return 0;
 }
